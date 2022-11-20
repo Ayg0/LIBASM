@@ -1,6 +1,6 @@
 NAME = liasm.a
 
-SRCS = ft_write.s ft_strlen.s
+SRCS = ft_write.s ft_strlen.s ft_strcpy.s
 
 NS = ~/Desktop/NAS/nasm -f macho64 
 
@@ -18,7 +18,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 
 bin:	$(NAME)
-	gcc	main.c $(NAME)
+	gcc	-g main.c $(NAME)
 
 clean:
 		$(RM) $(OBJS)
