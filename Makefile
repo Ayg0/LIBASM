@@ -18,7 +18,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 
 bin:	$(NAME)
-	gcc	-g main.c $(NAME)
+	gcc	-fsanitize=address -g main.c $(NAME)
 
 clean:
 		$(RM) $(OBJS)

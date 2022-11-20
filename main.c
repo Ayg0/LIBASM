@@ -7,13 +7,13 @@ extern	char*	ft_strcpy(char *dst, char *src);
 
 int	main()
 {
-	char	s[] = "EXECUTED CORRECTLY\n";
-	char	d[5];
+	char	*s = malloc(21);
+	s =  "EXECUTED CORRECTLY\n";
+	char	*d = malloc(5);
 
 
 	//write(1, s, ft_strlen(s));
-	printf("%p\n", strcpy(d, s));
-	printf("%p\n", d);
-	write(1, d, ft_strlen(d));
+	ft_strcpy(d, s);
+	ft_write(1, d, 20);
 	return (0);
 }
