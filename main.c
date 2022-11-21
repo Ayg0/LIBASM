@@ -1,5 +1,6 @@
 #include <string.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 extern	size_t	ft_strlen(const char *s);
 extern	int		ft_write(int fd, char *buf, int count);

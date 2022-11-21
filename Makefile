@@ -2,7 +2,7 @@ NAME = liasm.a
 
 SRCS = ft_write.s ft_strlen.s ft_strcpy.s
 
-NS = ~/Desktop/NAS/nasm -f macho64 
+NS = ~/Desktop/NAS/nasm -f macho64 -g
 
 OBJS = ${SRCS:.s=.o}
 
