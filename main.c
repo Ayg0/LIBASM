@@ -1,20 +1,19 @@
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 extern	size_t	ft_strlen(const char *s);
 extern	int		ft_write(int fd, char *buf, int count);
 extern	char*	ft_strcpy(char *dst, char *src);
+extern	int		ft_strcmp(const char *s1, const char *s2);
 
-int	main()
+int	main(int ac, char **av)
 {
-	char	*s = malloc(21);
-	s =  "EXECUTED CORRECTLY\n";
-	char	*d = malloc(5);
+	char	s[] = "aaaa";
+	char	d[] = "aaaa";
 
-
-	//write(1, s, ft_strlen(s));
-	ft_strcpy(d, s);
-	ft_write(1, d, 20);
+	printf("%d\n", strcmp(s, d));
+	printf("%d\n", ft_strcmp(s, d));
 	return (0);
 }
