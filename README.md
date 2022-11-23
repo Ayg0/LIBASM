@@ -6,4 +6,5 @@ learning assembly why not doing a project at the same time
  - ft_strlen
  - ft_strcpy
  - ft_strcmp (diff in ascii).
- - write with no errno
+ - write
+ - errno good stuff
