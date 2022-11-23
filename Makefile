@@ -1,6 +1,6 @@
 NAME = liasm.a
 
-SRCS = ft_write.s ft_strlen.s ft_strcpy.s ft_strcmp.s
+SRCS = ft_write.s ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s
 
 NS = ~/Desktop/NAS/nasm -f macho64 -g
 

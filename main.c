@@ -14,8 +14,8 @@ int	main(int ac, char **av)
 	char	s[] = "aaaa";
 	char	d[] = "aaaaa";
 
-	ft_write(1, NULL, 9);
-	printf("%d\n", errno);
+	read(0, d, 2);
+	printf("%d;;%s\n", errno, d);
 	perror("ERR");
 	return (0);
 }
