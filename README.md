@@ -11,13 +11,13 @@ learning assembly why not doing a project at the same time.
  - [X] [ft_read](https://man7.org/linux/man-pages/man2/read.2.html).
  - [X] [ft_strdup](https://man7.org/linux/man-pages/man3/strdup.3.html).
 ## resources I used while learning:
-- [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe)										**easy to search and look for instructions**.  
-- [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master)	**looking for a syscall here's the number**.  
-- [AT&T syntax](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm) 									**when generating an assembly from C in mac (gcc -S), you'll need this**.  
-- [Linux syscalls](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)							**working on linux ? here you go**. 
+- [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe) **easy to search and look for instructions**.  
+- [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master) **looking for a syscall here's the number**.  
+- [AT&T syntax](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm)	**when generating an assembly from C in mac (gcc -S), you'll need this**.  
+- [Linux syscalls](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)	**working on linux ? here you go**. 
 ## Tools to use:
 - Online compilers:
-  - [rextester](https://rextester.com/l/nasm_online_compiler)	**online nasm compiler**.  
-  - [godbolt](https://godbolt.org/) 							**check the code from C to assembly**.  
-  - [cpulator](https://cpulator.01xz.net/?sys=arm-de1soc)		**a very good emulator**.  
+  - [rextester](https://rextester.com/l/nasm_online_compiler) **online nasm compiler**.  
+  - [godbolt](https://godbolt.org/)	**check the code from C to assembly**.  
+  - [cpulator](https://cpulator.01xz.net/?sys=arm-de1soc)	**a very good emulator**.  
 
