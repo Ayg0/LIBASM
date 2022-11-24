@@ -6,6 +6,8 @@
 
 extern	size_t	ft_strlen(const char *s);
 extern	int		ft_write(int fd, char *buf, int count);
+extern	int		ft_read(int fildes, void *buf, size_t nbytes);
+extern	char	*ft_strdup(const char *s1);
 extern	char*	ft_strcpy(char *dst, char *src);
 extern	int		ft_strcmp(const char *s1, const char *s2);
 
@@ -14,8 +16,9 @@ int	main(int ac, char **av)
 	char	s[] = "aaaa";
 	char	d[] = "aaaaa";
 
-	read(0, d, 2);
-	printf("%d;;%s\n", errno, d);
-	perror("ERR");
+	char *r = ft_strdup("wow");
+	//printf("%d;;%s\n", errno, d);
+	//perror("ERR");
+	printf("%s\n", r);
 	return (0);
 }

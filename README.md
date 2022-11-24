@@ -9,3 +9,4 @@ learning assembly why not doing a project at the same time
  - ft_write
  - errno good stuff
  - ft_read
+ - ft_strdup
