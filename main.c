@@ -13,12 +13,13 @@ extern	int		ft_strcmp(const char *s1, const char *s2);
 
 int	main(int ac, char **av)
 {
-	char	s[] = "aaaa";
+	char	s[] = "aaaaa";
 	char	d[] = "aaaaa";
 
-	char *r = ft_strdup("wow");
+	//char *r = ft_strdup("wow");
 	//printf("%d;;%s\n", errno, d);
 	//perror("ERR");
-	printf("%s\n", r);
+	printf("%d\n", ft_strcmp(s, d));
+	printf("%zu\n", ft_strlen(s));
 	return (0);
 }
