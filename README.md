@@ -10,3 +10,6 @@ learning assembly why not doing a project at the same time
  - errno good stuff
  - ft_read
  - ft_strdup
+## resources I used while learning:
+> [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe). 
+> [MAC' system calls](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master). 
