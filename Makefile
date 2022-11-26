@@ -1,6 +1,8 @@
 NAME = liasm.a
 
-SRCS = ft_write.s ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s ft_strdup.s
+SRCS = ft_write.s ft_strlen.s ft_strcpy.s \
+		ft_strcmp.s ft_read.s ft_strdup.s \
+		ft_atoi_base.s
 
 NS = ~/Desktop/NAS/nasm -f macho64 -g
 
@@ -18,7 +20,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 
 bin:	$(NAME)
-	gcc -g -fsanitize=address main.c $(NAME)
+	gcc -g main.c $(NAME)
 
 clean:
 		$(RM) $(OBJS)

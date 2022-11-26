@@ -1,0 +1,10 @@
+     1                                  global	_ft_atoi_base
+     2                                  
+     3                                  section .text
+     4                                  	_ft_atoi_base:
+     5                                  		init:
+     6 00000000 488D3D(00000000)        			lea rdi, [rel l]
+     7 00000007 C3                      		ret
+     8                                  section	.data
+     9 00000000 0200000000000000-       	l times 2 dq 2
+     9 00000000 <rep 2h>           
