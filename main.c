@@ -11,7 +11,7 @@ extern	int		ft_read(int fildes, void *buf, size_t nbytes);
 extern	char	*ft_strdup(const char *s1);
 extern	char*	ft_strcpy(char *dst, char *src);
 extern	int		ft_strcmp(const char *s1, const char *s2);
-extern	int 	ft_atoi_base(char *str, char *base);
+extern	size_t 	ft_atoi_base(char *str, char *base);
 
 int	main(int ac, char **av)
 {
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	//{
 	//	l[0] = l[2] = i;
 	//	l[1] = i - 1;
-		printf("i=%d\n", ft_atoi_base("310", "0123456789abcdef"));
+		printf("i=%zu\n", ft_atoi_base("a", "0123456789abcdef"));
 	//	i++;
 	//}
 		/* ' ' => 32

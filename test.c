@@ -26,13 +26,6 @@ int	check_base(char *s)
 
 int	main(int ac, char **av)
 {
-	int i = 0;
-	char l[3] = {0};
-	while (i != 128)
-	{
-		if (!check_base(l))
-			printf("%d\n", i);
-		i++;
-		l[0] = l[1] = i;
-	}
+	int i = 1 << 4;
+	printf("%d\n", i);
 }

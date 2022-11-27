@@ -2,7 +2,7 @@ global	_ft_strlen
 
 section	.text
 	_ft_strlen:
-		xor	rax, rax		; initialize rax to zero
+		xor	rax, rax		; initialize rax to 0
 	start:
 		cmp	byte [rdi + rax], 0	; compare the value pointed by rdi + rax to 0
 		je	mov_on			; jmp to move on if they are equal
