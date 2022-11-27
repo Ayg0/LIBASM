@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 
 bin:	$(NAME)
-	gcc -g main.c $(NAME)
+	gcc -fsanitize=address main.c $(NAME)
 
 clean:
 		$(RM) $(OBJS)

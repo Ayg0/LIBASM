@@ -16,7 +16,7 @@ int	check_base(char *s)
 			c = 1;
 		size_t k = ((size_t)1) << (s[i] - ((!(!c)) * 64));
 		if ((l[c] & k) == k)
-			return (write(1, "ax kadir\n", 9));
+			return (5);
 		l[c] |= k;
 		i++;
 	}
@@ -30,7 +30,8 @@ int	main(int ac, char **av)
 	char l[3] = {0};
 	while (i != 128)
 	{
-		printf("wt?%d::%d\n", i, check_base(l));
+		if (!check_base(l))
+			printf("%d\n", i);
 		i++;
 		l[0] = l[1] = i;
 	}

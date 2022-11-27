@@ -15,10 +15,20 @@ extern	int 	ft_atoi_base(char *str, char *base);
 
 int	main(int ac, char **av)
 {
-	char	s[] = "aaaaa";
-	char	d[] = "aaaaa";
-
-	int i = ft_atoi_base(av[1], NULL);
-	printf("%d\n", i);
-	return (0);
+	//char	s[] = "aaaaa";
+	//char	d[] = "aaaaa";
+	char l[4] = {0};
+	//int i = 1;
+	//while(i < 128)
+	//{
+	//	l[0] = l[2] = i;
+	//	l[1] = i - 1;
+		printf("i=%d\n", ft_atoi_base(NULL, "5"));
+	//	i++;
+	//}
+		/* ' ' => 32
+		9-10-11-12-13
+		'-' => 45
+		'+' => 43
+		*/
 }
