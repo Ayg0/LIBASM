@@ -51,12 +51,13 @@ section .text
 				cmp byte [rsi + rbx], al
 				je	continue
 				inc	rbx
+				jmp get_ind
 			continue:
 			pop rax
 			add rax, rbx
 			inc rdi
 			jmp loopu
-		end:	
+		end:
 		pop rbx
 		ret
 		err:
