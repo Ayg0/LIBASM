@@ -36,8 +36,27 @@ section .text
 		cmp rax, 2
 		jl err
 		pop rdi
+		mov rcx, rax
 		xor rax, rax
-		
+		loopu:
+			cmp byte[rdi], 0
+			je	end
+			mul rcx
+			xor rbx, rbx
+			push rax
+			mov al, [rdi]
+			get_ind:
+				cmp byte [rsi + rbx], 0
+				je err_2
+				cmp byte [rsi + rbx], al
+				je	continue
+				inc	rbx
+			continue:
+			pop rax
+			add rax, rbx
+			inc rdi
+			jmp loopu
+		end:	
 		pop rbx
 		ret
 		err:
@@ -45,5 +64,9 @@ section .text
 			pop rdi
 			pop rbx
 			ret
+		err_2
+			pop rax
+			pop rbx
+			mov rax, -2
 section	.data
 	l times 2 dq 0
