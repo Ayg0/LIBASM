@@ -10,6 +10,7 @@ learning assembly why not doing a project at the same time.
  - [X] [errno](https://man7.org/linux/man-pages/man3/errno.3.html).
  - [X] [ft_read](https://man7.org/linux/man-pages/man2/read.2.html).
  - [X] [ft_strdup](https://man7.org/linux/man-pages/man3/strdup.3.html).
+ - [X] ft_atoi_base
 ## resources I used while learning:
 - [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe) **easy to search and look for instructions**.  
 - [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master) **looking for a syscall here's the number**.  
