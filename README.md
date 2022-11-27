@@ -23,8 +23,8 @@ learning assembly why not doing a project at the same time.
   - [cpulator](https://cpulator.01xz.net/?sys=arm-de1soc)	**a very good emulator**.  
 ## keep in mind:
  - This is my first attempt to make real solutions in assembly the code may have bad practices (we all know that this happens when you start something new), and errors, if you stumbled upon one please contact me i'll appreciate that.
- - ft_atoi_base modification:
-   -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it
-   -> ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself
-   -> ft_atoi_base returns size_t.
+ - ft_atoi_base modification:  
+   -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it.  
+   -> ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself.  
+   -> ft_atoi_base returns size_t.  
  - if you have any questions or found a problem in this repo and code contact me.
