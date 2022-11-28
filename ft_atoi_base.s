@@ -61,7 +61,7 @@ section .text
 		pop rbx								; restoring rbx
 		ret									; return
 		err:
-			mov rax, -1						; in case of err in the base return -1
+			mov rax, -1 					; in case of err in the base return -1
 			pop rdi							; restoring rdi
 			pop rbx							; restoring rbx
 			ret								; return
@@ -74,7 +74,7 @@ section	.data
 	l times 2 dq 0							; define a 2 * (8 bytes) variable called l
 ; How does it work:
 ; -> to check doubles in the base i went with the approach get a chunk of memory that can hold 128 bit (for ascii), so we will have a bit for each character.
-; 	-> so making 2 * (8 bytes) = 128, I can use each 8 bytes at a time to use shift, or, and the And operation, so the first 64 characters will be stored in the 1st
+; 	-> so making 2 * (8 bytes) = 128 bits, I can use each 8 bytes at a time to use "SHIFT", "OR", and the "AND" operation, so the first 64 characters will be stored in the 1st
 ;	8 bytes while the next will be in the 2nd.
 ;	-> with that approach we will need to to sub 64 from each number bigger than 64.
 ;	-> simple example:
