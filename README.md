@@ -29,5 +29,5 @@ learning assembly why not doing a project at the same time.
  - ft_atoi_base modification:  
    -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it.  
    -> ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself.  
-   -> ft_atoi_base returns size_t.  
+   -> ft_atoi_base returns long.  
  - if you have any questions or found a problem in this repo and code contact me.
