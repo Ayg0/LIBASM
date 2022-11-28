@@ -4,7 +4,7 @@ SRCS = ft_write.s ft_strlen.s ft_strcpy.s \
 		ft_strcmp.s ft_read.s ft_strdup.s \
 		ft_atoi_base.s
 
-NS = ~/Desktop/NAS/nasm -f macho64 -g
+NS = ~/Desktop/NAS/nasm -f macho64 
 
 OBJS = ${SRCS:.s=.o}
 

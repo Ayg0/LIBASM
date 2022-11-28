@@ -1,0 +1,2 @@
+objdump -D  -x86-asm-syntax=intel ./ff.o >> l
+nasm -f macho64 ft_atoi_base.s -l ww

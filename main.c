@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	//{
 	//	l[0] = l[2] = i;
 	//	l[1] = i - 1;
-		printf("i=%zu\n", ft_atoi_base("a", "0123456789abcdef"));
+		printf("i=%zu\n", ft_atoi_base("101", "01"));
 	//	i++;
 	//}
 		/* ' ' => 32

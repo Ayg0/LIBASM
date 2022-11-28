@@ -65,7 +65,7 @@ section .text
 			pop rdi							; restoring rdi
 			pop rbx							; restoring rbx
 			ret								; return
-		err_2
+		err_2:
 			pop rax							; restoring rax
 			pop rbx							; restoring rbx
 			mov rax, -2						; in case of error in the element of the number return -2
