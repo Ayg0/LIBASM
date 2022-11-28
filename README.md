@@ -21,6 +21,9 @@ learning assembly why not doing a project at the same time.
   - [rextester](https://rextester.com/l/nasm_online_compiler) **online nasm compiler**.  
   - [godbolt](https://godbolt.org/)	**check the code from C to assembly**.  
   - [cpulator](https://cpulator.01xz.net/?sys=arm-de1soc)	**a very good emulator**.  
+- COMMAND LINE TOOLS:
+  - [nasm](https://www.nasm.us/) **compiler I use**.   
+  - [lldb](https://lldb.llvm.org/) **debugger I use**.  
 ## keep in mind:
  - This is my first attempt to make real solutions in assembly the code may have bad practices (we all know that this happens when you start something new), and errors, if you stumbled upon one please contact me i'll appreciate that.
  - ft_atoi_base modification:  
