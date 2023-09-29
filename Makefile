@@ -1,10 +1,10 @@
-NAME = liasm.a
+NAME = libasm.a
 
 SRCS = ft_write.s ft_strlen.s ft_strcpy.s \
 		ft_strcmp.s ft_read.s ft_strdup.s \
 		ft_atoi_base.s
 
-NS = ~/Desktop/NAS/nasm -f macho64 
+NS = nasm -f macho64 
 
 OBJS = ${SRCS:.s=.o}
 
