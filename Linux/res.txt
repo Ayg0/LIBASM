@@ -1,0 +1,6 @@
+www.felixcloutier.com/x86/movsx:movsxd
+https://c9x.me/x86/html/file_module_x86_id_308.html
+https://en.wikibooks.org/wiki/X86_Assembly/Data_Transfer#Move_with_sign_extend
+https://www.ired.team/miscellaneous-reversing-forensics/windows-kernel-internals/linux-x64-calling-convention-stack-frame
+https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/
+https://www.cs.fsu.edu/~langley/CNT5605/2017-Summer/assembly-example/assembly.html

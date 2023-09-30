@@ -1,6 +1,6 @@
 NAME = libasm.a
 
-SRCS = test.s
+SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s
 
 NS = nasm -f elf64 
 
@@ -17,7 +17,7 @@ all: $(NAME)
 $(NAME):	$(OBJS)
 
 bin:	$(NAME)
-	gcc -fsanitize=address main.c $(NAME)
+	gcc -g -fsanitize=address -zexecstack main.c $(NAME)
 
 clean:
 		$(RM) $(OBJS)

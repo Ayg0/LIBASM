@@ -15,7 +15,9 @@ learning assembly why not doing a project at the same time.
 - [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe) **easy to search and look for instructions**.  
 - [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master) **looking for a syscall here's the number**.  
 - [AT&T syntax](https://csiflabs.cs.ucdavis.edu/~ssdavis/50/att-syntax.htm)	**when generating an assembly from C in mac (gcc -S), you'll need this**.  
-- [Linux syscalls](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)	**working on linux ? here you go**. 
+- [Linux syscalls](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)	**working on linux ? here you go** 
+- [Calling Convention](https://www.ired.team/miscellaneous-reversing-forensics/windows-kernel-internals/linux-x64-calling-convention-stack-frame#accessing-1st-argument) **carefull with the calling convention**
+https://en.wikibooks.org/wiki/X86_Assembly/Data_Transfer
 ## Tools to use:
 - Online compilers:
   - [rextester](https://rextester.com/l/nasm_online_compiler) **online nasm compiler**.  

@@ -2,8 +2,8 @@ section .data
 	phrase db "hello guys"
 
 section .text
-	global test
-test:
+	global _start
+_start:
 	mov rax, 1
 	mov rdi, 1
 	lea rsi, [rel phrase]
@@ -12,4 +12,3 @@ test:
 	mov rax, 60
 	mov rdi, 66
 	syscall
-	ret
