@@ -1,14 +1,23 @@
-section .data
-	phrase db "hello guys"
 
-section .text
-	global _start
+extern	printf
+
+SECTION .DATA
+    msg:	db "Hello world", 0 ; Zero is Null terminator 
+    fmt:    db "%s", 10, 0 ; printf format string follow by a newline(10) and a null terminator(0), "\n",'0'
+
+SECTION .TEXT
+    global _start
+    
 _start:
-	mov rax, 1
-	mov rdi, 1
-	lea rsi, [rel phrase]
-	mov rdx, 10
-	syscall
-	mov rax, 60
-	mov rdi, 66
-	syscall
+    push rbp ; Push stack
+
+    ; Set up parameters and call the C function
+    mov	rdi,fmt
+    mov	rsi,msg
+    mov	rax,0
+    call printf
+
+    pop	rbp		; Pop stack
+
+    mov	rax,0	; Exit code 0
+    ret			; Return

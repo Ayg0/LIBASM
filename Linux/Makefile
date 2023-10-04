@@ -1,6 +1,6 @@
 NAME = libasm.a
 
-SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s
+SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s ft_write.s ft_strdup.s
 
 NS = nasm -f elf64 
 
@@ -16,14 +16,14 @@ all: $(NAME)
 
 $(NAME):	$(OBJS)
 
-bin:	$(NAME)
-	gcc -g -fsanitize=address -zexecstack main.c $(NAME)
+bin:	main.c $(NAME)
+	gcc -g -fsanitize=address -zexecstack main.c $(NAME) -o bin
 
 clean:
 		$(RM) $(OBJS)
 
 fclean: clean
-		$(RM) $(NAME) a.out
+		$(RM) $(NAME) bin
 
 re: fclean bin
 
