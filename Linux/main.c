@@ -16,13 +16,8 @@ extern int	ft_strcmp(const char *s1, const char *s2);
 extern int 	ft_read(int fd, char *buff, size_t size);
 extern int 	ft_write(int fd, char *buff, size_t size);
 extern char	*ft_strdup(const char *s);
-int	main(){
-	char s[100];
-	char *s2;
-	int ret;
-	ret = ft_read(0, s, 100);
-	s2 = ft_strdup(s);
-	ft_write(1, s, ft_strlen(s));
-	ft_write(1, s2, ft_strlen(s2));
-	free(s2);
+extern int	ft_atoi_base(char *str, char *base);
+int	main(int ac, char **av){
+	int i = ft_atoi_base(av[1], av[2]);
+	printf("%d\n", i);
 }
