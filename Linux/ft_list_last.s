@@ -4,11 +4,11 @@ section .text
     ft_list_last:
         cmp rdi, 0
         je  _return
-        count:
+        loop:
             cmp qword [rdi + 8], 0
             je _return
             mov rdi, [rdi + 8]
-            jmp count
+            jmp loop
         _return:
             mov rax, rdi
             ret

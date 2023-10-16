@@ -1,10 +1,6 @@
 global ft_list_push_front
 extern ft_create_elem
 extern malloc
-; struc s_list
-;     data resq 1
-;     next resq 1
-; endstruc
 
 section .text
     ft_list_push_front:
