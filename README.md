@@ -11,6 +11,13 @@ learning assembly why not doing a project at the same time.
  - [X] [ft_read](https://man7.org/linux/man-pages/man2/read.2.html).
  - [X] [ft_strdup](https://man7.org/linux/man-pages/man3/strdup.3.html).
  - [X] ft_atoi_base
+<br>**Linux Only**
+ - [X] ft_create_elem
+ - [X] ft_list_push_front
+ - [X] ft_list_size
+ - [X] ft_list_last
+ - [X] ft_list_remove_if
+ - [ ] ft_list_sort
 ## resources I used while learning:
 - [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe) **easy to search and look for instructions**.  
 - [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master) **looking for a syscall here's the number**.  
