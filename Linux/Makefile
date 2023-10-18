@@ -1,9 +1,14 @@
 NAME = libasm.a
 
+#linked_lists/ft_list_merge.s
 SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s \
 		ft_write.s ft_strdup.s ft_atoi_base.s\
-		ft_list_push_front.s ft_create_elem.s\
-		ft_list_size.s ft_list_last.s ft_list_remove_if.s
+		linked_lists/ft_list_push_front.s\
+		linked_lists/ft_create_elem.s \
+		linked_lists/ft_list_size.s \
+		linked_lists/ft_list_last.s \
+		linked_lists/ft_list_remove_if.s\
+		linked_lists/ft_list_sort.s
 NS = nasm -g -f elf64 
 
 OBJS = ${SRCS:.s=.o}
