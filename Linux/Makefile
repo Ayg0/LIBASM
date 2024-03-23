@@ -8,7 +8,8 @@ SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s \
 		linked_lists/ft_list_size.s \
 		linked_lists/ft_list_last.s \
 		linked_lists/ft_list_remove_if.s\
-		linked_lists/ft_list_sort.s
+		linked_lists/ft_list_sort.s\
+		linked_lists/ft_list_push.s
 NS = nasm -g -f elf64 
 
 OBJS = ${SRCS:.s=.o}

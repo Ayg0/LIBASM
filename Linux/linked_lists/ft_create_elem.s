@@ -2,8 +2,8 @@ global ft_create_elem
 extern malloc
 section .text
     ft_create_elem:
-        push rdi
-        mov  rdi, 16
+        push rdi		; head of the list
+        mov  rdi, 16	; size of struct
         call malloc wrt ..plt
         jc  _pop_rdi
         pop rdi
