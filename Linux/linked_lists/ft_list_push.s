@@ -20,4 +20,4 @@ section .text
 		ret
 		HANDLE_NULL:
 			mov [rdi], rax
-		ret 
+		ret

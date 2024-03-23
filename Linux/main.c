@@ -1,4 +1,6 @@
 # include "functions.h"
+#include <stddef.h>
+#include <stdio.h>
 
 int cmp_ints(int *nbr1, int *nbr2){
 		if (nbr1 && nbr2)
@@ -16,12 +18,68 @@ void f(void *i){
 	free(i);
 }
 
-void push(t_list **begin_list, void *data){
-	t_list *node = ft_create_elem(data);
-	if ((*begin_list))
-		ft_list_last(*begin_list)->next = node;
-	else
-	 	*begin_list = node;
+int compareInt(t_list *firstNode, t_list *secondNode){
+	int firstNodeData = *(int *)firstNode->data;
+	int secondNodeData = *(int *)secondNode->data;
+
+	return (firstNodeData - secondNodeData);
+}
+
+void	breakList(t_list *list, size_t index, t_list **leftList, t_list **rightList){
+	for (size_t i = 0; i < index; i++){
+		ft_list_push(leftList, list->data);
+		list = list->next;
+	}
+	while (list) {
+		ft_list_push(rightList, list->data);
+		list = list->next;
+	}
+}
+
+void printList(t_list *list){
+	if (!list)
+		return;
+	printf("\nSTART -------------------------\n");
+	while (list) {
+		printElement(list);
+		list = list->next;
+	}
+	printf("END -------------------------\n");
+}
+
+void	mergeSort(t_list **list, size_t size, compareFunc fun){
+	t_list	*leftList = NULL;
+	t_list	*rightList = NULL;
+	t_list	*keepHead = *list;
+
+	if (size > 2){
+		breakList(*list, size / 2, &leftList, &rightList);
+		mergeSort(&leftList, size / 2, fun);
+		mergeSort(&rightList, size - (size / 2), fun);
+	}
+	while (leftList && rightList) {
+		if (fun(leftList, rightList) >= 0){
+			(*list)->data = rightList->data;
+			rightList = rightList->next;
+		}
+		else{
+			(*list)->data = leftList->data;
+			leftList = leftList->next;
+		}
+		*list = (*list)->next;
+	}
+	while (leftList) {
+		(*list)->data = leftList->data;
+		leftList = leftList->next;
+		*list = (*list)->next;
+	}
+	while (rightList) {
+		(*list)->data = rightList->data;
+		rightList = rightList->next;
+		*list = (*list)->next;
+	}
+	*list = keepHead;
+	return ;
 }
 
 int	main(int ac, char **av){
@@ -32,16 +90,16 @@ int	main(int ac, char **av){
 	int *j = malloc(sizeof(int));
 	 	*j = 1;
 	int *k = malloc(sizeof(int));
-	 	*k = 2;
+	 	*k = -6;
 	int *l = malloc(sizeof(int));
-	 	*l = 4;
+	 	*l = 85;
 	int *m = malloc(sizeof(int));
-		*m = 5;
-	ft_list_push_front(&ptr, i);
-	ft_list_push_front(&ptr, j);
-	ft_list_push_front(&ptr, k);
-	ft_list_push_front(&ptr, l);
-	ft_list_push_front(&ptr, m);
+		*m = 8;
+	ft_list_push(&ptr, i);
+	ft_list_push(&ptr, j);
+	ft_list_push(&ptr, k);
+	ft_list_push(&ptr, l);
+	ft_list_push(&ptr, m);
 	//int nbr = 4;
 	//if (ac == 2)
 	//	nbr = atoi(av[1]);
@@ -49,13 +107,8 @@ int	main(int ac, char **av){
 	//	ft_list_push(&ptr, m);
 	//	*m += 1;
 	//}
-	while (ptr)
-	{
-		printElement(ptr);
-		tmp = ptr;
-		ptr = ptr->next;
-		free(tmp);
-	}
+	mergeSort(&ptr, ft_list_size(ptr), compareInt);
+	printList(ptr);
 }
 
 
