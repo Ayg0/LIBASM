@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int cmp_ints(int *nbr1, int *nbr2){
-		if (nbr1 && nbr2)
-			return !(*nbr1 == *nbr2);
-		else
-		 return 0;
-}
+//int cmp_ints(int *nbr1, int *nbr2){
+//		if (nbr1 && nbr2)
+//			return !(*nbr1 == *nbr2);
+//		else
+//		 return 0;
+//}
 
 void printElement(t_list *ptr){
 	printf("%d ", *(int *)ptr->data);
@@ -26,17 +26,6 @@ int compareInt(t_list *firstNode, t_list *secondNode){
 	return (firstNodeData >= secondNodeData);
 }
 
-void	breakList(t_list *list, size_t index, t_list **leftList, t_list **rightList){
-	for (size_t i = 0; i < index; i++){
-		ft_list_push(leftList, list->data);
-		list = list->next;
-	}
-	while (list) {
-		ft_list_push(rightList, list->data);
-		list = list->next;
-	}
-}
-
 void printList(t_list *list){
 	printf("\nSTART -------------------------\n");
 	while (list) {
@@ -45,7 +34,6 @@ void printList(t_list *list){
 	}
 	printf("END -------------------------\n");
 }
-
 
 void mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc fun){
 	t_list	*keepHead = *list;
@@ -73,22 +61,8 @@ void mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc 
 		(*list)->data = rightList->data;
 		rightList = rightList->next;
 		*list = (*list)->next;
-	}
+	} 
 	*list = keepHead;
-}
-
-void	mergeSort(t_list **list, size_t size, compareFunc fun){
-	t_list	*leftList = NULL;
-	t_list	*rightList = NULL;
-
-	if (size > 2){
-		breakList(*list, size / 2, &leftList, &rightList);
-		mergeSort(&leftList, size / 2, fun);
-		mergeSort(&rightList, size - (size / 2), fun);
-	}
-	if (size >= 2)
-		mergeLists(list, leftList, rightList, fun);
-	return ;
 }
 
 int	main(int ac, char **av){
@@ -118,7 +92,18 @@ int	main(int ac, char **av){
 		*tmp = atoi(av[i + 1]);
 		ft_list_push(&ptr, tmp);
 	}
+	//for (size_t i = 0; i < 2; i++){
+	//	int *tmp = malloc(sizeof(int));
+	//	*tmp = atoi(av[i + 1]);
+	//	ft_list_push(&leftList, tmp);
+	//}
+	//for (size_t i = 2; i < nbr; i++){
+	//	int *tmp = malloc(sizeof(int));
+	//	*tmp = atoi(av[i + 1]);
+	//	ft_list_push(&rightList, tmp);
+	//}
 	ft_list_sort(&ptr, compareInt);
+	//ft_mergeLists(&ptr,leftList, rightList, compareInt);
 	//ft_breakList(ptr, 10, &leftList, &rightList);
 	printList(ptr);
 	//printList(leftList);

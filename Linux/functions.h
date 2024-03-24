@@ -6,6 +6,7 @@
 # include <errno.h>
 # include <unistd.h>
 
+
 typedef struct s_list
 {
 	void *data;
@@ -31,8 +32,8 @@ extern t_list	*ft_list_push(t_list **begin_list, void *data);
 extern int		ft_list_size(t_list *begin_list);
 extern t_list	*ft_list_last(t_list *begin_list);
 extern void		ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *));
-extern void	ft_breakList(t_list *list, size_t index, t_list **leftList, t_list **rightList);
-
+extern void		ft_breakList(t_list *list, size_t index, t_list **leftList, t_list **rightList);
+void			ft_mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc fun);
 # endif
 
 //elemt -> rax

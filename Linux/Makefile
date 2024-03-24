@@ -11,6 +11,7 @@ SRCS = ft_strlen.s ft_strcpy.s ft_strcmp.s ft_read.s \
 		linked_lists/ft_list_sort.s\
 		linked_lists/ft_mergeSort.s\
 		linked_lists/ft_breakList.s\
+		linked_lists/ft_mergeLists.s\
 		linked_lists/ft_list_push.s
 NS = nasm -g -f elf64 
 

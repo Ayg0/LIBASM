@@ -2,7 +2,7 @@ global mergeSortList
 extern breakList
 extern ft_breakList
 extern printList
-extern mergeLists
+extern ft_mergeLists
 
 ;; rdi => **list ;; rsi => cmp ;; rdx => size ;;
 section .text
@@ -56,7 +56,7 @@ section .text
 		lea rax, [rsp]
 		mov rsi, [rax]
 		mov rdx, [rax + 8]
-		call mergeLists
+		call ft_mergeLists
 		_RETURN:
 		add rsp, 16
 		ret
