@@ -54,6 +54,7 @@ void	mergeSort(t_list **list, size_t size, compareFunc fun){
 
 	if (size > 2){
 		breakList(*list, size / 2, &leftList, &rightList);
+	//
 		mergeSort(&leftList, size / 2, fun);
 		mergeSort(&rightList, size - (size / 2), fun);
 	}
@@ -107,8 +108,9 @@ int	main(int ac, char **av){
 	//	ft_list_push(&ptr, m);
 	//	*m += 1;
 	//}
-	mergeSort(&ptr, ft_list_size(ptr), compareInt);
-	printList(ptr);
+	ft_list_sort(&ptr, cmp_ints);
+	//mergeSort(&ptr, ft_list_size(ptr), compareInt);
+	//printList(ptr);
 }
 
 

@@ -8,7 +8,7 @@ section .text
 		je		NullError
 		cmp		rsi, 0	; checking for null base
 		je		NullError
-		lea		rdx, [rel asciiFlags]	; leading the address of the var to rdx
+		lea		rdx, [rel asciiFlags]	; loading the address of the var to rdx
 		mov		rax, qword 0x280100003E00	; loading a 64 bit immidiate to rax, bits for white spaces,'+' and '-' are set
 		mov		qword [rdx], rax
 		xor		rax, rax
