@@ -37,11 +37,11 @@ learning assembly why not doing a project at the same time.
  - This is my first attempt to make real solutions in assembly the code may have bad practices (we all know that this happens when you start something new), and errors, if you stumbled upon one please contact me i'll appreciate that.
  - ft_atoi_base modification:  
    -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it.  
+   -> ft_atoi_base returns long.  
    -> **MacOs** ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself.  
-   -> **Linux** ft_atoi_base will return -1 in case of Null parameters and -2 in case of base Elements error, and -3 in case of base size error
-   -> ft_atoi_base returns long.
- - ft_list_sort:
-    -> ft_list_sort is using mergeSort under the hood.
-    -> didn't free the memory yet, I'm tired I'll make it later.
-    -> the compare function should return 0 if the right element is bigger then the left element.
+   -> **Linux** ft_atoi_base will return -1 in case of Null parameters and -2 in case of base Elements error, and -3 in case of base size error.  
+ - ft_list_sort:  
+    -> ft_list_sort is using mergeSort under the hood.  
+    -> didn't free the memory yet, I'm tired I'll make it later.  
+    -> the compare function should return 0 if the right element is bigger then the left element.  
  - if you have any questions or found a problem in this repo and code contact me.
