@@ -17,7 +17,7 @@ learning assembly why not doing a project at the same time.
  - [X] ft_list_size
  - [X] ft_list_last
  - [X] ft_list_remove_if
- - [ ] ft_list_sort
+ - [X] ft_list_sort
 ## resources I used while learning:
 - [Instructions](http://www.mathemainzel.info/files/x86asmref.html#repe) **easy to search and look for instructions**.  
 - [Mac's system calls numbers](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master) **looking for a syscall here's the number**.  
@@ -39,5 +39,9 @@ learning assembly why not doing a project at the same time.
    -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it.  
    -> **MacOs** ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself.  
    -> **Linux** ft_atoi_base will return -1 in case of Null parameters and -2 in case of base Elements error, and -3 in case of base size error
-   -> ft_atoi_base returns long.  
+   -> ft_atoi_base returns long.
+ - ft_list_sort:
+    -> ft_list_sort is using mergeSort under the hood.
+    -> didn't free the memory yet, I'm tired I'll make it later.
+    -> the compare function should return 0 if the right element is bigger then the left element.
  - if you have any questions or found a problem in this repo and code contact me.
