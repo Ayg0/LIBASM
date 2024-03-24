@@ -54,7 +54,6 @@ void	mergeSort(t_list **list, size_t size, compareFunc fun){
 
 	if (size > 2){
 		breakList(*list, size / 2, &leftList, &rightList);
-	//
 		mergeSort(&leftList, size / 2, fun);
 		mergeSort(&rightList, size - (size / 2), fun);
 	}

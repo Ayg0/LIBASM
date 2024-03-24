@@ -5,6 +5,10 @@ extern printList
 ;; rdi => **list ;; rsi => cmp ;; rdx => size ;;
 section .text
 	mergeSortList:
+	sub rsp, 16
+	lea rax, [rsp]
+	mov qword [rax], 0
+	mov qword [rax + 8], 0
 	;; check if size > 2
 	cmp rdx, 2
 	jl fillList
@@ -15,24 +19,22 @@ section .text
 	mov rsi, rdx
 	shr rsi, 1 ;; shift right to divid by 2
 	push rsi
-	mov rdx, [rel leftListAddress]
-	mov rcx, [rel rightListAddress]
+	mov rdx, rax
+	add rax, 8
+	mov rcx, rax
 	call breakList
-	pop rsi ;; free the stack finish later
-	pop rdx ;; free the stack finish later
-	pop rax ;; free the stack finish later
+	pop rax ;; size / 2
+	pop rdx ;; size
+	pop rsi ;; cmp Func
 	pop rdi ;; free the stack finish later
-	
 		fillList:
 		mov rdi, [rdi]
 		call printList
-		mov rdi, [rel leftList]
+		lea rax, [rsp]
+		mov rdi, [rax]
 		call printList
-		mov rdi, [rel rightList]
+		lea rax, [rsp]
+		mov rdi, [rax + 8]
 		call printList
+		add rsp, 16
 		ret
-section	.data
-leftList dq 0
-rightList dq 0
-leftListAddress dq leftList
-rightListAddress dq rightList
