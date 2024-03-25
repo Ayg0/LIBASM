@@ -26,59 +26,42 @@ int compareInt(t_list *firstNode, t_list *secondNode){
 	return (firstNodeData >= secondNodeData);
 }
 
+//void ft_freeList(t_list **list){
+//	t_list *tmp;
+//	t_list *iter = *list;
+//	while (iter) {
+//		//free(iter->data);
+//		tmp = iter;
+//		iter = iter->next;
+//		free(tmp);
+//	}
+//	*list = NULL;
+//}
+
 void printList(t_list *list){
 	printf("\nSTART -------------------------\n");
 	while (list) {
+		printf("%p -> ", &list);
 		printElement(list);
 		list = list->next;
 	}
 	printf("END -------------------------\n");
 }
 
-void mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc fun){
-	t_list	*keepHead = *list;
-	int leftListElem = 0;
-	int rightListElem = 0;
-	while (leftList && rightList) {
-		leftListElem = *(int *)leftList->data;
-		rightListElem = *(int *)rightList->data;
-		if (fun(leftList, rightList)){
-			(*list)->data = rightList->data;
-			rightList = rightList->next;
-		}
-		else{
-			(*list)->data = leftList->data;
-			leftList = leftList->next;
-		}
-		*list = (*list)->next;
-	}
-	while (leftList) {
-		(*list)->data = leftList->data;
-		leftList = leftList->next;
-		*list = (*list)->next;
-	}
-	while (rightList) {
-		(*list)->data = rightList->data;
-		rightList = rightList->next;
-		*list = (*list)->next;
-	} 
-	*list = keepHead;
-}
-
 int	main(int ac, char **av){
 	t_list *ptr = NULL;
 	t_list *leftList = NULL;
 	t_list *rightList = NULL;
-	int *i = malloc(sizeof(int));
-	 	*i = 0;
-	int *j = malloc(sizeof(int));
-	 	*j = 1;
-	int *k = malloc(sizeof(int));
-	 	*k = 2;
-	int *l = malloc(sizeof(int));
-	 	*l = 3;
-	int *m = malloc(sizeof(int));
-		*m = 4;
+	//int *i = malloc(sizeof(int));
+	// 	*i = 0;
+	//int *j = malloc(sizeof(int));
+	// 	*j = 1;
+	//int *k = malloc(sizeof(int));
+	// 	*k = 2;
+	//int *l = malloc(sizeof(int));
+	// 	*l = 3;
+	//int *m = malloc(sizeof(int));
+	//	*m = 4;
 	//ft_list_push(&ptr, i);
 	//ft_list_push(&ptr, j);
 	//ft_list_push(&ptr, k);
@@ -102,10 +85,12 @@ int	main(int ac, char **av){
 	//	*tmp = atoi(av[i + 1]);
 	//	ft_list_push(&rightList, tmp);
 	//}
-	ft_list_sort(&ptr, compareInt);
 	//ft_mergeLists(&ptr,leftList, rightList, compareInt);
 	//ft_breakList(ptr, 10, &leftList, &rightList);
 	printList(ptr);
+	ft_list_sort(&ptr, compareInt);
+	printList(ptr);
+	//ft_freeList(&ptr);
 	//printList(leftList);
 	//printList(rightList);
 }

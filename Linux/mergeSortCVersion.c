@@ -1,5 +1,16 @@
 #include "functions.h"
+#include <stdlib.h>
 
+void freeList(t_list **list){
+	t_list *tmp;
+	while (*list) {
+		free((*list)->data);
+		tmp = *list;
+		*list = (*list)->next;
+		free(tmp);
+	}
+	*list = NULL;
+}
 
 void mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc fun){
 	t_list	*keepHead = *list;

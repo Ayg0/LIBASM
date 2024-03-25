@@ -1,5 +1,5 @@
 global ft_mergeLists
-
+extern ft_freeList
 %macro PUSH_REGISTERS 0
 	push rdi
 	push rsi
