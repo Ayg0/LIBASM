@@ -14,4 +14,6 @@ $(NAME): $(SRC)
 clean:
 	rm -f $(NAME)
 
-.PHONY: clean
+re: clean all
+
+.PHONY: clean re
