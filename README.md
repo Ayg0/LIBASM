@@ -39,7 +39,7 @@ learning assembly why not doing a project at the same time.
    -> I'll not handle the negative values it's just pain to see -101 in binary or thinking of how the base "abc" will handle it.  
    -> ft_atoi_base returns long.  
    -> **MacOs** ft_atoi_base will return -1 in case of an error in the base and -2 in the case of error in the string itself.  
-   -> **Linux** ft_atoi_base will return -1 in case of Null parameters and -2 in case of base Elements error, and -3 in case of base size error.  
+   -> **Linux** ft_atoi_base will return -1 in case of Null parameters and -2 in case of base Error. 
  - ft_list_sort:  
     -> ft_list_sort is using mergeSort under the hood.  
     -> didn't free the memory yet, I'm tired I'll make it later.  
