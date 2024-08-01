@@ -8,7 +8,7 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/Linux/JTests/a.out",
+			"program": "${workspaceFolder}/Linux/JTests/ft_atoi_baseTests",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
