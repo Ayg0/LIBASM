@@ -22,7 +22,7 @@ void	mergeLists(t_list **list, t_list *leftList, t_list *rightList, compareFunc 
 // Mandaroty:
 extern size_t	ft_strlen(char *s);
 extern char		*ft_strdup(const char *s);
-extern int		ft_atoi_base(char *str, char *base);
+extern long		ft_atoi_base(char *str, char *base);
 extern int 		ft_read(int fd, char *buff, size_t size);
 extern int		ft_strcmp(const char *s1, const char *s2);
 extern int		ft_write(int fd, char *buff, size_t size);
