@@ -2,10 +2,6 @@
 
 extern int		ft_atoi_base(char *str, char *base);
 
-void	Jsetup() {}
-
-void	Jcleanup() {}
-
 TEST_START(DEC_VALUES)
 	ASSERT_INT32_EQU(56, ft_atoi_base("        \t\v    56", "0123456789"));
 	ASSERT_INT32_EQU(0, ft_atoi_base("0", "0123456789"));
@@ -54,6 +50,9 @@ TEST_START(NEGATIVE_VALUES, IGNORE_TEST)
 	ASSERT_INT32_EQU(-6, ft_atoi_base("-6", "0123456789"));
 	ASSERT_INT32_EQU(-6, ft_atoi_base("-+-+-+-+-+------6", "0123456789"));
 TEST_END
+
+void	Jsetup() {}
+void	Jcleanup() {}
 
 int	main(){
 	JTEST_START;

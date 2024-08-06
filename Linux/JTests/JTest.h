@@ -22,7 +22,7 @@ typedef struct testStruct{
 	int		IgnoredGroupTests;
 } _testStruct;
 
-// Declare a New Test Group
+// => Declare a New Test Group TEST_START(TG_NAME)
 // => Optional Param IGNORE_TEST, to ignore the group
 # define TEST_START(...) TEST_START_HELPER(__VA_ARGS__, DEFAULT_TEST_STATE)
 
@@ -69,8 +69,6 @@ typedef struct testStruct{
 
 # define JTEST_START jStart()
 # define JTEST_END jEnd()
-void	jEnd();
-void	jStart();
 
 
 #define IS_EQUAL_GEN(EXPECTED, RESULT, FORMAT_STR, LINE) \
@@ -84,7 +82,7 @@ void	jStart();
         } \
     } while (0)
 
-#ifdef USE_COLORS
+#if USE_COLORS
 	# define DEFF_COLOR "\033[0m"
 	# define SUCC_COLOR "\033[1;37;42m"
 	# define FAIL_COLOR "\033[1;37;41m"
@@ -98,19 +96,23 @@ void	jStart();
 	# define IGNORE_COLOR "|"
 #endif
 
-// runs before each Test Group:
-void	Jsetup();
-// runs after each Test Group:
-void	Jcleanup();
+void	jEnd(void);
+void	jStart(void);
 
-void	runAll();
+// runs before each Test Group:
+void	Jsetup(void);
+// runs after each Test Group:
+void	Jcleanup(void);
+
+
+void	runAll(void);
 void	runTest(testFunction f);
 void	registerTest(testFunction test);
 
 void	isEqualStr(const char *expected, const char *resulted, int lineNb);
 void	isDataEqual(void *expected, void *resulted, int lineNb, int (*cmp)(void *, void *), void (*print)(void *));
 
-void	displayFail();
-void	displaySuccess();
+void	displayFail(void);
+void	displaySuccess(void);
 void	printTestInfo(int lineNb);
 void	displayGroup(int count, const char *testGroup, char state);

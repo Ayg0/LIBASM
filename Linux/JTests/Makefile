@@ -1,25 +1,40 @@
-#make NAME=ft_atoi_baseTests
-
-NAME = ft_atoi_baseTests
-
 LIBASM = ../libasm.a
-
-SRC = $(NAME).c
-
+SRC = $(wildcard *Tests.c)
 LIB = $(LIBASM) jtest.a
+EXE = $(SRC:.c=)
 
-all: $(NAME)
+# Default target
+all: $(EXE)
 
-$(NAME): $(SRC) $(LIBASM)
-	gcc -g -z noexecstack -o $(NAME) $(SRC) $(LIB)
+# Compile each test file into an executable
+$(EXE): %: %.c $(LIB)
+	gcc -g -z noexecstack -o $@ $< $(LIB)
 
+# Build libasm
 $(LIBASM):
 	make -C ..
 
 clean:
-	make -C .. fclean
-	rm -f $(NAME)
+	make -C .. clean
+	rm -f $(EXE)
 
-re: clean all
+# Rebuild LibAsm
+reLIB:
+	make -C .. re
+# Rebuild everything
+re: reLIB clean all
 
-.PHONY: clean re
+# Run all the executables
+run: $(EXE)
+	@for exe in $(EXE); do \
+		echo "Running $$exe"; \
+		./$$exe; \
+	done
+# Run all the executables
+minimal: $(EXE)
+	@for exe in $(EXE); do \
+		echo -n "Running $$exe:\n=> "; \
+		./$$exe 2>&1 | grep "SUCCESS RATE:"; \
+	done
+
+.PHONY: run re clean all minimal
