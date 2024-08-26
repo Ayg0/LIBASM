@@ -78,57 +78,55 @@ section .text
 		cmp rdi, 13
 		jg	RET0
 	RET1:
-		mov rax, 1
+		mov rax, 1				; return 1 if it's a whitespace
 		ret
 	RET0:
 		mov rax, 0
 		ret
 ; ---------------------------------------
 	getIndex:
-		xor rax, rax
+		xor rax, rax				; init rax to Zero
 	LOOP:
-		cmp byte [rdi + rax], 0
-		je	RET_NO_FOUND
-		cmp byte [rdi + rax], sil
-		je	RET_INDEX
+		cmp byte [rdi + rax], 0		; check if we reached '\0'
+		je	RET_NO_FOUND			; then we didn't find our element
+		cmp byte [rdi + rax], sil	; else we compare the current char to the element we're searching for.
+		je	RET_INDEX				; return currentIndex
 		inc rax
 		jmp LOOP
 	RET_NO_FOUND:
 		mov rax, -1
-		ret
+		ret							; return -1 in case item not found
 	RET_INDEX:
 		ret
 ; ---------------------------------------
 	BaseValidation:
-		lea r9, [rel asciiFlags]
+		lea r9, [rel asciiFlags]			; load the relative address of asciiFlags
 		mov rax, qword 0x280100003E00
-		mov qword [r9], rax
-		mov qword [r9 + 8], 0
+		mov qword [r9], rax					; init's the positions of whitespaces, '+' and '-' to 1 
+		mov qword [r9 + 8], 0				; init the rest of that memory to 0
 		xor rax, rax	; baseLen = 0
 	NEXT_CHECK:
 		mov cl, byte [rdi + rax]
-		cmp cl, 0
+		cmp cl, 0							; check if we reached the end of the base
 		je RET
 		mov rsi, 0
-		cmp cl, 64
-		jl	CHECK_DOUBLE
-		sub cl, 64
-		add rsi, 8
+		cmp cl, 64							; check if ascii of current character is less than 64
+		jl	CHECK_DOUBLE					; if that's the case jump to check duplicated
+		sub cl, 64							; if not we sub 64 so we check the next qword if flaged
+		add rsi, 8							; add 8 to rsi to point to the next qword
 	CHECK_DOUBLE:
-		mov rdx, 1
-		shl	rdx, cl
-		mov r10, rdx
-		mov r11, [r9 + rsi]
-		mov r11, [r9]
-		and rdx, [r9 + rsi]
-		jnz	RET_NEGATIVE
-		or	[r9 + rsi], r10
+		mov rdx, 1							; init rdx with 1
+		shl	rdx, cl							; rdx << cl ; 1 << cl
+		mov r10, rdx						; keep the value of rdx in r10
+		and rdx, [r9 + rsi]					; we check if the bit at the qword is already flaged
+		jnz	RET_NEGATIVE					; if it's flaged then the element accured before or it's a forbidden item (ex:'+')
+		or	[r9 + rsi], r10					; if not we flag that element for next checks
 		inc rax
-		jmp NEXT_CHECK
+		jmp NEXT_CHECK						; check the next char
 	RET:
-		ret
+		ret									; return rax that contains the base len
 	RET_NEGATIVE:
-		mov rax, -1
+		mov rax, -1							; return -1 in case of an error.
 		ret
 ; ---------------------------------------
 	skipWhiteSpaces:
@@ -136,16 +134,26 @@ section .text
 	checkWhiteSpace:
 		push rdi
 		push rax
-		mov rdi, [rdi, rax]
-		and rdi, 0xFF
-		call ft_isSpace
+		mov rdi, [rdi, rax]					; rdi now contains the current char
+		and rdi, 0xFF						; making sure that's only one byte that's set
+		call ft_isSpace						; check if it's a whitespace
 		pop r9
 		pop rdi
 		cmp rax, 0
-		je	RET_SKIPPING_NBR
+		je	RET_SKIPPING_NBR				; return the number of character skipped if the current one isn't a whitespace
 		mov rax, r9
-		inc rax
-		jmp checkWhiteSpace
+		inc rax								; inc rax
+		jmp checkWhiteSpace					; check next char
 	RET_SKIPPING_NBR:
 		mov rax, r9
 		ret
+
+
+; explain the flags
+;	Memory
+;	-------------------------------------------------
+;	|      1st 8 bytes      |      2nd 8 bytes      |
+;	-------------------------------------------------
+;	represent all ascii using 16 bytes or 128 bit
+;	if the bit at location X is 1 means that the character with X as ascii value is already present.
+;	ex: A = 65 if bit 65 is 1 means the base have the character A in it.

@@ -26,6 +26,7 @@ int compareInt(t_list *firstNode, t_list *secondNode){
 	return (firstNodeData >= secondNodeData);
 }
 
+
 //void ft_freeList(t_list **list){
 //	t_list *tmp;
 //	t_list *iter = *list;
